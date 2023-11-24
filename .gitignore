@@ -27,3 +27,4 @@ dist-ssr
 .yarn
 *.bat
 *.cmd
+.pnp.loader.mjs
