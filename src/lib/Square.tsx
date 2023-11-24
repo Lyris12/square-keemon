@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 /**
@@ -92,7 +92,7 @@ const Square = ({ size = 250, direction = 'H', smooth = false }) => {
         }
   }, [size, direction, smooth])
 
-  return <canvas ref={canvasRef} width={size} height={size} />
+	return <canvas ref={canvasRef} width={size} height={size} />
 }
 
 Square.propTypes = {
