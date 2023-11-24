@@ -1,10 +1,7 @@
 import React from 'react';
-import ReactDOM, { createRoot } from 'react-dom/client';
-import Square from './component';
+import ReactDOM from 'react-dom/client';
+import Square from './lib';
 
-const App = () => {
-  return (
-		<Square size='250' direction="DTL" smooth/>
-	);
-}
-export default App;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Square size='250' direction='DTL' smooth />
+);
