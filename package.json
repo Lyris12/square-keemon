@@ -1,6 +1,6 @@
 {
   "name": "square-keemon",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "description": "Draws a square containing a customizable rainbow gradient",
   "main": "./dist/square-keemon.umd.js",
@@ -20,6 +20,7 @@
     "watch": "vitest"
   },
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -46,7 +47,6 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
-    "vite": "^5.0.0",
-    "vite-plugin-dts": "^3.6.3"
+    "vite": "^5.0.0"
   }
 }

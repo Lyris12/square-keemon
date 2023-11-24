@@ -1,29 +1,38 @@
 # Square-Keemon
 
+![Banner Image](./images/banner.png)
+
 Draws a square containing a customizable rainbow gradient.
+
+## Installation
+
+To install, you can use your favorite package manager, for example `yarn` or `npm`. We recommend yarn.
+
+```
+yarn add square-keemon
+```
 
 ## Usage
 
 ```jsx
-<Square [size=String] [direction=string] [smooth]>
+<Square [size] [direction] [smooth]>
 ```
 
-`size` := How long each side of this Square will be
-`direction` := In which direction(s) the rainbow gradient will flow
-`smooth` := Whether the rainbow gradient will be rendered with parallel or perpendicular separators
+- `size`: How long each side of this Square will be.
+- `direction`: In which direction(s) the rainbow gradient will flow. Usable letters:
 
-- `direction` Usable letters:
+  ```
+  H: Horizontal
+  V: Vertical
+  D: Diagonal
+  L: Left to Right
+  T: Top to Bottom
+  R: Right to Left
+  B: Bottom to Top
+  ```
 
-```
-H := Horizontal
-V := Vertical
-D := Diagonal
-L := Left to Right
-T := Top to Bottom
-R := Right to Left
-B := Bottom to Top
-```
+  - No spacing nor separation is required.
+  - It is **not** recommended to put `L` and `R` in the same direction string, nor `T` and `B`.
+  - `H` & `V` do not work with `smooth`.
 
-- No spacing nor separation is required
-- ! It is **not** recommended to put `L` and `R` in the same direction string, nor `T` and `B`
-- `H` & `V` do not work with `smooth`
+- `smooth` := Whether the rainbow gradient will be rendered with parallel or perpendicular separators.

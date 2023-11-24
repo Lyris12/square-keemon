@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react'
+import PropTypes from 'prop-types'
 
 /**
  * Draws a square containing a customizable rainbow gradient.
@@ -7,11 +8,11 @@ import React, { useRef, useEffect } from 'react';
  * @param {boolean} smooth - The smooth property.
  */
 const Square = ({ size = 250, direction = 'H', smooth = false }) => {
-  const canvasRef = useRef(null);
+  const canvasRef = useRef(null)
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const canvas = canvasRef.current
+    const ctx = canvas.getContext('2d')
     const w = ctx.canvas.width,
       h = ctx.canvas.height,
       d = 1 / 10 ** 9,
@@ -28,23 +29,20 @@ const Square = ({ size = 250, direction = 'H', smooth = false }) => {
         '#8000ff',
         '#f0f',
         '#ff0080',
-      ];
-    ctx.clearRect(0, 0, w, h);
+      ]
+    ctx.clearRect(0, 0, w, h)
     if (direction.includes('D') && smooth) {
       const gradient = ctx.createLinearGradient(
         w * direction.includes('R'),
         h * direction.includes('B'),
         w * direction.includes('L'),
-        h * direction.includes('T')
-      );
+        h * direction.includes('T'),
+      )
       for (let i = 0; i <= colors.length; ++i)
         for (let j = 0; j < 2; ++j)
-          gradient.addColorStop(
-            (i + j) / 13 - j * d,
-            colors[i % colors.length]
-          );
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, w, h);
+          gradient.addColorStop((i + j) / 13 - j * d, colors[i % colors.length])
+      ctx.fillStyle = gradient
+      ctx.fillRect(0, 0, w, h)
     } else
       for (let i = 0; i < 13; ++i)
         for (let j = 0; j < 13; ++j) {
@@ -71,29 +69,36 @@ const Square = ({ size = 250, direction = 'H', smooth = false }) => {
                 R: ((15 * (12 - i)) % 360) + ((15 * (12 - j)) % 360),
               },
             },
-          };
-          f.L = f.H;
-          f.T = f.V;
+          }
+          f.L = f.H
+          f.T = f.V
           f.D.L = {
             T: f.D.T.L,
             B: f.D.B.L,
-          };
-          f.D.R = { T: f.D.T.R, B: f.D.B.R };
-          for (let dir of direction.split('')) f = f[dir];
+          }
+          f.D.R = { T: f.D.T.R, B: f.D.B.R }
+          for (let dir of direction.split('')) f = f[dir]
           ctx.fillStyle = `hsl(
 						${f},
 						100%,
 						50%
-					)`;
+					)`
           ctx.fillRect(
             Math.floor((w / 13) * i),
             Math.floor((h / 13) * j),
             Math.ceil(w / 13),
-            Math.ceil(h / 13)
-          );
+            Math.ceil(h / 13),
+          )
         }
-  }, [size, direction, smooth]);
+  }, [size, direction, smooth])
 
-  return <canvas ref={canvasRef} width={size} height={size} />;
-};
-export default Square;
+  return <canvas ref={canvasRef} width={size} height={size} />
+}
+
+Square.propTypes = {
+  size: PropTypes.number,
+  direction: PropTypes.string,
+  smooth: PropTypes.bool,
+}
+
+export default Square
