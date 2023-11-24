@@ -18,7 +18,7 @@ npm install square-keemon
 <Square [size] [direction] [smooth]>
 ```
 
-- `size`: How long each side of this Square will be.
+- `size`: How long each side of this Square will be, in pixels.
 - `direction`: In which direction(s) the rainbow gradient will flow. Usable letters:
 
   ```
