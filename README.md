@@ -6,10 +6,10 @@ Draws a square containing a customizable rainbow gradient.
 
 ## Installation
 
-To install, you can use your favorite package manager, for example `yarn` or `npm`. We recommend yarn.
+To install, you can use your favorite package manager, for example `yarn` or `npm`. We recommend npm.
 
 ```
-yarn add square-keemon
+npm install square-keemon
 ```
 
 ## Usage
@@ -35,4 +35,4 @@ yarn add square-keemon
   - It is **not** recommended to put `L` and `R` in the same direction string, nor `T` and `B`.
   - `H` & `V` do not work with `smooth`.
 
-- `smooth` := Whether the rainbow gradient will be rendered with parallel or perpendicular separators.
+- `smooth`: Whether the rainbow gradient will be rendered with parallel or perpendicular separators.

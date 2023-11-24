@@ -1,8 +1,27 @@
 {
   "name": "square-keemon",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
   "description": "Draws a square containing a customizable rainbow gradient",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lyris12/square-keemon.git"
+  },
+  "keywords": [
+    "square",
+    "react",
+    "draw"
+  ],
+  "author": "Clara Grace",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lyris12/square-keemon/issues"
+  },
+  "homepage": "https://github.com/Lyris12/square-keemon#readme",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "main": "./dist/square-keemon.umd.js",
   "module": "./dist/square-keemon.es.js",
   "exports": {
@@ -24,21 +43,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Lyris12/square-keemon.git"
-  },
-  "keywords": [
-    "square",
-    "react",
-    "draw"
-  ],
-  "author": "Clara Grace",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Lyris12/square-keemon/issues"
-  },
-  "homepage": "https://github.com/Lyris12/square-keemon#readme",
   "devDependencies": {
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
