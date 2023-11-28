@@ -1,6 +1,6 @@
 {
   "name": "square-keemon",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "type": "module",
   "description": "Draws a square containing a customizable rainbow gradient",
   "repository": {
@@ -22,8 +22,9 @@
     "dist",
     "README.md"
   ],
-  "main": "./dist/square-keemon.umd.js",
-  "module": "./dist/square-keemon.es.js",
+  "main": "dist/square-keemon.umd.js",
+  "module": "dist/square-keemon.es.js",
+  "types": "dist/square-keemon.d.ts",
   "exports": {
     ".": {
       "import": "./dist/square-keemon.es.js",
@@ -32,25 +33,26 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest run",
     "watch": "vitest"
   },
-  "dependencies": {
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
   "devDependencies": {
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
-    "@vitejs/plugin-react": "^4.2.0",
-    "eslint": "^8.53.0",
-    "eslint-plugin-react": "^7.33.2",
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.38",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "eslint": "^8.54.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
-    "vite": "^5.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.3.2",
+    "vite": "^5.0.2",
+    "vite-plugin-dts": "^3.6.3"
   }
 }
