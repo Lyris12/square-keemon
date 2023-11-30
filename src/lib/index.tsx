@@ -9,7 +9,7 @@ type SquareType = {
 /**
  * Draws a square containing a customizable rainbow gradient.
  */
-export function Square({ size = 250, direction = 'H', smooth = false }: SquareType) {
+function Square({ size = 250, direction = 'H', smooth = false }: SquareType) {
 	const canvasRef = useRef<HTMLCanvasElement>(null)
 
 	useEffect(() => {
