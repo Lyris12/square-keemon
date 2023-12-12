@@ -4,10 +4,11 @@ import react from '@vitejs/plugin-react-swc'
 import dts from 'vite-plugin-dts'
 
 export default defineConfig({
-  plugins: [react(), dts({ rollupTypes: true })],
+  plugins: [react(), dts({ include: 'src/lib', insertTypesEntry: true })],
   build: {
+    copyPublicDir: false,
     lib: {
-      entry: resolve(__dirname, 'src/lib/index.tsx'),
+      entry: resolve(__dirname, 'src/lib/Square.tsx'),
       name: 'square-keemon',
       formats: ['es', 'umd'],
       fileName: (format: string) => `square-keemon.${format}.js`,

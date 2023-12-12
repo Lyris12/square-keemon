@@ -1,6 +1,6 @@
 {
   "name": "square-keemon",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "type": "module",
   "description": "Draws a square containing a customizable rainbow gradient",
   "repository": {
@@ -23,13 +23,14 @@
     "LICENSE",
     "README.md"
   ],
-  "main": "dist/square-keemon.umd.js",
-  "module": "dist/square-keemon.es.js",
-  "types": "dist/square-keemon.d.ts",
+  "main": "./dist/square-keemon.umd.js",
+  "module": "./dist/square-keemon.es.js",
+  "types": "./dist/square-keemon.d.ts",
   "exports": {
     ".": {
       "import": "./dist/square-keemon.es.js",
-      "require": "./dist/square-keemon.umd.js"
+      "require": "./dist/square-keemon.umd.js",
+      "types": "./dist/square-keemon.d.ts"
     }
   },
   "scripts": {
