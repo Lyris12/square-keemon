@@ -1,6 +1,6 @@
 {
   "name": "square-keemon",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "type": "module",
   "description": "Draws a square containing a customizable rainbow gradient",
   "repository": {
