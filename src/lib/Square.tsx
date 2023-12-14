@@ -1,15 +1,50 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, type FC } from 'react'
 
+/**
+ * Props for the Square component.
+ */
 type SquareType = {
+  /**
+   * How long each side of this Square will be.
+   * @default 250
+   */
   size: number
+
+  /**
+   * In which direction(s) the rainbow gradient will flow.
+   * Usable letters:
+   * - H: Horizontal
+   * - V: Vertical
+   * - D: Diagonal
+   * - L: Left to Right
+   * - T: Top to Bottom
+   * - R: Right to Left
+   * - B: Bottom to Top
+   *
+   * No spacing nor separation is required.
+   *
+   * It is **not** recommended to put `L` and `R` in the same direction string, nor `T` and `B`.
+   *
+   * `H` & `V` do not work with `smooth`.
+   * @default 'H'
+   */
   direction?: string
+
+  /**
+   * Whether the rainbow gradient will be rendered with parallel or perpendicular separators.
+   * @default false
+   */
   smooth?: boolean
 }
 
 /**
  * Draws a square containing a customizable rainbow gradient.
  */
-function Square({ size = 250, direction = 'H', smooth = false }: SquareType) {
+const Square: FC<SquareType> = ({
+  size = 250,
+  direction = 'H',
+  smooth = false,
+}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -60,9 +95,17 @@ function Square({ size = 250, direction = 'H', smooth = false }: SquareType) {
             else if (direction.includes('T') && direction.includes('R')) f = DTR
             else if (direction.includes('B') && direction.includes('L')) f = DBL
             else if (direction.includes('B') && direction.includes('R')) f = DBR
-          } else if (direction.includes('H') || direction.includes('L') || direction.includes('R'))
+          } else if (
+            direction.includes('H') ||
+            direction.includes('L') ||
+            direction.includes('R')
+          )
             f = H
-          else if (direction.includes('V') || direction.includes('T') || direction.includes('B'))
+          else if (
+            direction.includes('V') ||
+            direction.includes('T') ||
+            direction.includes('B')
+          )
             f = V
           else return
           ctx!.fillStyle = `hsl(

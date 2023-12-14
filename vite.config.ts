@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react-swc'
 import dts from 'vite-plugin-dts'
 
 export default defineConfig({
-  plugins: [react(), dts({ include: 'src/lib', insertTypesEntry: true })],
+  plugins: [react(), dts({ rollupTypes: true })],
   build: {
     copyPublicDir: false,
     lib: {
