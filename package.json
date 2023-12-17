@@ -1,8 +1,11 @@
 {
   "name": "square-keemon",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "type": "module",
   "description": "Draws a square containing a customizable rainbow gradient",
+  "engines": {
+    "node": ">=18"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Lyris12/square-keemon.git"
@@ -19,10 +22,7 @@
   },
   "homepage": "https://github.com/Lyris12/square-keemon#readme",
   "files": [
-    "src/lib",
-    "dist",
-    "LICENSE",
-    "README.md"
+    "dist"
   ],
   "main": "./dist/square-keemon.umd.js",
   "module": "./dist/square-keemon.es.js",
@@ -35,32 +35,39 @@
     }
   },
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
+    "dev": "vite",
+    "format": "npm run prettier && npm run lint",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "prettier": "prettier . --write",
-    "format": "npm run prettier && npm run lint",
     "preview": "vite preview",
+    "prepare": "npm run format && npm run test && npm run build",
+    "start": "vite",
     "test": "vitest run",
     "watch": "vitest"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
     "@types/node": "^20.10.4",
     "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.17",
+    "@types/react-dom": "^18.2.18",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
-    "eslint": "^8.55.0",
+    "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "jsdom": "^23.0.1",
     "prettier": "3.1.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.3.3",
-    "vite": "^5.0.8",
-    "vite-plugin-dts": "^3.6.4"
+    "vite": "^5.0.10",
+    "vite-plugin-dts": "^3.6.4",
+    "vitest": "^1.0.4",
+    "vitest-canvas-mock": "^0.3.3"
   }
 }
